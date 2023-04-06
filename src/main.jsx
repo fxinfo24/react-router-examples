@@ -64,10 +64,10 @@ const AppRouter = createBrowserRouter([
       loader: () => fetch('https://jsonplaceholder.typicode.com/comments')
     },
     {
-      path: 'comment/:Id',
+      path: 'comment/:commentId',
       element: <CommentDetail></CommentDetail>,
       // loader: ({params}) => console.log(params.Id)
-      loader: () => fetch(`https://jsonplaceholder.typicode.com/comments ${params.Id}`)
+      loader: (params) => fetch(`https://jsonplaceholder.typicode.com/comments/${params.commentId}`)
     },
     {
       path: 'contact',
