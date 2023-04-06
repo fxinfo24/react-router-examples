@@ -2,12 +2,11 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const CommentDetail = () => {
-    const commentDetail = useLoaderData()
-    console.log(commentDetail);
+    const comment = useLoaderData('comment');
+    console.log(comment);
     return (
         <div>
-            <h2>Comment details here</h2>
-            
+            <h2>Comment details Id </h2>
         </div>
     );
 };

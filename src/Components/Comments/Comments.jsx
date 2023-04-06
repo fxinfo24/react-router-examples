@@ -4,7 +4,7 @@ import Comment from '../Comment/Comment';
 
 const Comments = () => {
     const comments = useLoaderData()
-    console.log(comments);
+    // console.log(comments);
     return (
         <div>
             <h2>All comments together: {comments.length}</h2>
