@@ -1,12 +1,25 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const CommentDetail = () => {
-    const comment = useLoaderData('comment');
-    console.log(comment);
+    const commentDetail = useLoaderData('comment');
+    // console.log(commentDetail);
+    const {postId, id, name, email, body} = commentDetail;
+
+    
+    const goBack = useNavigate();
+
+    const goBackHandler = () => {
+        goBack(-1);
+
+    };
     return (
         <div>
-            <h2>Comment details Id </h2>
+            <h2>Comment details Post Id {postId}</h2>
+            <h3>{name}</h3>
+            <p>{email}</p>
+            <p>{body}</p>
+            <button onClick={goBackHandler}>Go Back</button>
         </div>
     );
 };
